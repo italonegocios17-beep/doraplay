@@ -1,3 +1,12 @@
 # Roadmap
 - [x] Etapa 1: interface navegável (prévia)
-- [ ] Etapa 2: aguardando aprovação do usuário
+- [ ] Etapa 2: produto funcional — iniciada, pendente por subetapas (ver docs/PLANO_DE_PRODUCAO.md)
+  - [x] Documentação de produção (mapa de páginas e plano)
+  - [ ] 2.1 Autenticação, banco e RLS
+  - [ ] 2.2 CRUD de catálogo
+  - [ ] 2.3 Bunny Stream com validação de acesso
+  - [ ] 2.4 Pagamentos Pix/cartão (webhooks, idempotência)
+  - [ ] 2.5 Gestão administrativa
+  - [ ] 2.6 Meta Pixel / CAPI
+  - [ ] 2.7 LGPD
+- [ ] Etapa 3: preparação de lançamento
