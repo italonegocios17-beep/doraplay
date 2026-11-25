@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Stage 1 data lives in `src/lib/catalog.ts` and offer rules in `src/lib/offers.ts`; replace these modules with Cloud queries later instead of hardcoding data in routes (single swap point).
+- Shared UI lives in `src/components/dp/` (AppShell, Cover, NovelaCard, AuthForm, admin helpers, `btn` variants); pages compose these rather than restyling.
+- Covers are generated abstract placeholders (`Cover`); never ship official artwork without authorization.
+- Any non-functional action must say so in the UI (no fake confirmations, payments or saves).

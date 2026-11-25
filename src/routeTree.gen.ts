@@ -10,33 +10,288 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as CadastroRouteImport } from './routes/cadastro'
+import { Route as EntrarRouteImport } from './routes/entrar'
+import { Route as ExplorarRouteImport } from './routes/explorar'
+import { Route as FavoritosRouteImport } from './routes/favoritos'
+import { Route as HistoricoRouteImport } from './routes/historico'
+import { Route as MinhasNovelasRouteImport } from './routes/minhas-novelas'
+import { Route as PerfilRouteImport } from './routes/perfil'
+import { Route as RecuperarSenhaRouteImport } from './routes/recuperar-senha'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminBannersRouteImport } from './routes/admin.banners'
+import { Route as AdminClientesRouteImport } from './routes/admin.clientes'
+import { Route as AdminConfiguracoesRouteImport } from './routes/admin.configuracoes'
+import { Route as AdminOfertasRouteImport } from './routes/admin.ofertas'
+import { Route as AssistirSlugRouteImport } from './routes/assistir.$slug'
+import { Route as CheckoutSlugRouteImport } from './routes/checkout.$slug'
+import { Route as NovelaSlugRouteImport } from './routes/novela.$slug'
+import { Route as OfertaSlugRouteImport } from './routes/oferta.$slug'
+import { Route as AdminCatalogoIndexRouteImport } from './routes/admin.catalogo.index'
+import { Route as AdminCatalogoSlugRouteImport } from './routes/admin.catalogo.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CadastroRoute = CadastroRouteImport.update({
+  id: '/cadastro',
+  path: '/cadastro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EntrarRoute = EntrarRouteImport.update({
+  id: '/entrar',
+  path: '/entrar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExplorarRoute = ExplorarRouteImport.update({
+  id: '/explorar',
+  path: '/explorar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritosRoute = FavoritosRouteImport.update({
+  id: '/favoritos',
+  path: '/favoritos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoricoRoute = HistoricoRouteImport.update({
+  id: '/historico',
+  path: '/historico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MinhasNovelasRoute = MinhasNovelasRouteImport.update({
+  id: '/minhas-novelas',
+  path: '/minhas-novelas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerfilRoute = PerfilRouteImport.update({
+  id: '/perfil',
+  path: '/perfil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecuperarSenhaRoute = RecuperarSenhaRouteImport.update({
+  id: '/recuperar-senha',
+  path: '/recuperar-senha',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminBannersRoute = AdminBannersRouteImport.update({
+  id: '/banners',
+  path: '/banners',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminClientesRoute = AdminClientesRouteImport.update({
+  id: '/clientes',
+  path: '/clientes',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminConfiguracoesRoute = AdminConfiguracoesRouteImport.update({
+  id: '/configuracoes',
+  path: '/configuracoes',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminOfertasRoute = AdminOfertasRouteImport.update({
+  id: '/ofertas',
+  path: '/ofertas',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AssistirSlugRoute = AssistirSlugRouteImport.update({
+  id: '/assistir/$slug',
+  path: '/assistir/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutSlugRoute = CheckoutSlugRouteImport.update({
+  id: '/checkout/$slug',
+  path: '/checkout/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NovelaSlugRoute = NovelaSlugRouteImport.update({
+  id: '/novela/$slug',
+  path: '/novela/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfertaSlugRoute = OfertaSlugRouteImport.update({
+  id: '/oferta/$slug',
+  path: '/oferta/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCatalogoIndexRoute = AdminCatalogoIndexRouteImport.update({
+  id: '/catalogo/',
+  path: '/catalogo/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminCatalogoSlugRoute = AdminCatalogoSlugRouteImport.update({
+  id: '/catalogo/$slug',
+  path: '/catalogo/$slug',
+  getParentRoute: () => AdminRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
+  '/cadastro': typeof CadastroRoute
+  '/entrar': typeof EntrarRoute
+  '/explorar': typeof ExplorarRoute
+  '/favoritos': typeof FavoritosRoute
+  '/historico': typeof HistoricoRoute
+  '/minhas-novelas': typeof MinhasNovelasRoute
+  '/perfil': typeof PerfilRoute
+  '/recuperar-senha': typeof RecuperarSenhaRoute
+  '/admin/banners': typeof AdminBannersRoute
+  '/admin/clientes': typeof AdminClientesRoute
+  '/admin/configuracoes': typeof AdminConfiguracoesRoute
+  '/admin/ofertas': typeof AdminOfertasRoute
+  '/assistir/$slug': typeof AssistirSlugRoute
+  '/checkout/$slug': typeof CheckoutSlugRoute
+  '/novela/$slug': typeof NovelaSlugRoute
+  '/oferta/$slug': typeof OfertaSlugRoute
+  '/admin/': typeof AdminIndexRoute
+  '/admin/catalogo/$slug': typeof AdminCatalogoSlugRoute
+  '/admin/catalogo/': typeof AdminCatalogoIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cadastro': typeof CadastroRoute
+  '/entrar': typeof EntrarRoute
+  '/explorar': typeof ExplorarRoute
+  '/favoritos': typeof FavoritosRoute
+  '/historico': typeof HistoricoRoute
+  '/minhas-novelas': typeof MinhasNovelasRoute
+  '/perfil': typeof PerfilRoute
+  '/recuperar-senha': typeof RecuperarSenhaRoute
+  '/admin/banners': typeof AdminBannersRoute
+  '/admin/clientes': typeof AdminClientesRoute
+  '/admin/configuracoes': typeof AdminConfiguracoesRoute
+  '/admin/ofertas': typeof AdminOfertasRoute
+  '/assistir/$slug': typeof AssistirSlugRoute
+  '/checkout/$slug': typeof CheckoutSlugRoute
+  '/novela/$slug': typeof NovelaSlugRoute
+  '/oferta/$slug': typeof OfertaSlugRoute
+  '/admin': typeof AdminIndexRoute
+  '/admin/catalogo/$slug': typeof AdminCatalogoSlugRoute
+  '/admin/catalogo': typeof AdminCatalogoIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
+  '/cadastro': typeof CadastroRoute
+  '/entrar': typeof EntrarRoute
+  '/explorar': typeof ExplorarRoute
+  '/favoritos': typeof FavoritosRoute
+  '/historico': typeof HistoricoRoute
+  '/minhas-novelas': typeof MinhasNovelasRoute
+  '/perfil': typeof PerfilRoute
+  '/recuperar-senha': typeof RecuperarSenhaRoute
+  '/admin/banners': typeof AdminBannersRoute
+  '/admin/clientes': typeof AdminClientesRoute
+  '/admin/configuracoes': typeof AdminConfiguracoesRoute
+  '/admin/ofertas': typeof AdminOfertasRoute
+  '/assistir/$slug': typeof AssistirSlugRoute
+  '/checkout/$slug': typeof CheckoutSlugRoute
+  '/novela/$slug': typeof NovelaSlugRoute
+  '/oferta/$slug': typeof OfertaSlugRoute
+  '/admin/': typeof AdminIndexRoute
+  '/admin/catalogo/$slug': typeof AdminCatalogoSlugRoute
+  '/admin/catalogo/': typeof AdminCatalogoIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/cadastro'
+    | '/entrar'
+    | '/explorar'
+    | '/favoritos'
+    | '/historico'
+    | '/minhas-novelas'
+    | '/perfil'
+    | '/recuperar-senha'
+    | '/admin/banners'
+    | '/admin/clientes'
+    | '/admin/configuracoes'
+    | '/admin/ofertas'
+    | '/assistir/$slug'
+    | '/checkout/$slug'
+    | '/novela/$slug'
+    | '/oferta/$slug'
+    | '/admin/'
+    | '/admin/catalogo/$slug'
+    | '/admin/catalogo/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/cadastro'
+    | '/entrar'
+    | '/explorar'
+    | '/favoritos'
+    | '/historico'
+    | '/minhas-novelas'
+    | '/perfil'
+    | '/recuperar-senha'
+    | '/admin/banners'
+    | '/admin/clientes'
+    | '/admin/configuracoes'
+    | '/admin/ofertas'
+    | '/assistir/$slug'
+    | '/checkout/$slug'
+    | '/novela/$slug'
+    | '/oferta/$slug'
+    | '/admin'
+    | '/admin/catalogo/$slug'
+    | '/admin/catalogo'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/cadastro'
+    | '/entrar'
+    | '/explorar'
+    | '/favoritos'
+    | '/historico'
+    | '/minhas-novelas'
+    | '/perfil'
+    | '/recuperar-senha'
+    | '/admin/banners'
+    | '/admin/clientes'
+    | '/admin/configuracoes'
+    | '/admin/ofertas'
+    | '/assistir/$slug'
+    | '/checkout/$slug'
+    | '/novela/$slug'
+    | '/oferta/$slug'
+    | '/admin/'
+    | '/admin/catalogo/$slug'
+    | '/admin/catalogo/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRouteWithChildren
+  CadastroRoute: typeof CadastroRoute
+  EntrarRoute: typeof EntrarRoute
+  ExplorarRoute: typeof ExplorarRoute
+  FavoritosRoute: typeof FavoritosRoute
+  HistoricoRoute: typeof HistoricoRoute
+  MinhasNovelasRoute: typeof MinhasNovelasRoute
+  PerfilRoute: typeof PerfilRoute
+  RecuperarSenhaRoute: typeof RecuperarSenhaRoute
+  AssistirSlugRoute: typeof AssistirSlugRoute
+  CheckoutSlugRoute: typeof CheckoutSlugRoute
+  NovelaSlugRoute: typeof NovelaSlugRoute
+  OfertaSlugRoute: typeof OfertaSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +303,186 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cadastro': {
+      id: '/cadastro'
+      path: '/cadastro'
+      fullPath: '/cadastro'
+      preLoaderRoute: typeof CadastroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/entrar': {
+      id: '/entrar'
+      path: '/entrar'
+      fullPath: '/entrar'
+      preLoaderRoute: typeof EntrarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explorar': {
+      id: '/explorar'
+      path: '/explorar'
+      fullPath: '/explorar'
+      preLoaderRoute: typeof ExplorarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favoritos': {
+      id: '/favoritos'
+      path: '/favoritos'
+      fullPath: '/favoritos'
+      preLoaderRoute: typeof FavoritosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/historico': {
+      id: '/historico'
+      path: '/historico'
+      fullPath: '/historico'
+      preLoaderRoute: typeof HistoricoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/minhas-novelas': {
+      id: '/minhas-novelas'
+      path: '/minhas-novelas'
+      fullPath: '/minhas-novelas'
+      preLoaderRoute: typeof MinhasNovelasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perfil': {
+      id: '/perfil'
+      path: '/perfil'
+      fullPath: '/perfil'
+      preLoaderRoute: typeof PerfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recuperar-senha': {
+      id: '/recuperar-senha'
+      path: '/recuperar-senha'
+      fullPath: '/recuperar-senha'
+      preLoaderRoute: typeof RecuperarSenhaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/banners': {
+      id: '/admin/banners'
+      path: '/banners'
+      fullPath: '/admin/banners'
+      preLoaderRoute: typeof AdminBannersRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/clientes': {
+      id: '/admin/clientes'
+      path: '/clientes'
+      fullPath: '/admin/clientes'
+      preLoaderRoute: typeof AdminClientesRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/configuracoes': {
+      id: '/admin/configuracoes'
+      path: '/configuracoes'
+      fullPath: '/admin/configuracoes'
+      preLoaderRoute: typeof AdminConfiguracoesRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/ofertas': {
+      id: '/admin/ofertas'
+      path: '/ofertas'
+      fullPath: '/admin/ofertas'
+      preLoaderRoute: typeof AdminOfertasRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/assistir/$slug': {
+      id: '/assistir/$slug'
+      path: '/assistir/$slug'
+      fullPath: '/assistir/$slug'
+      preLoaderRoute: typeof AssistirSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout/$slug': {
+      id: '/checkout/$slug'
+      path: '/checkout/$slug'
+      fullPath: '/checkout/$slug'
+      preLoaderRoute: typeof CheckoutSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/novela/$slug': {
+      id: '/novela/$slug'
+      path: '/novela/$slug'
+      fullPath: '/novela/$slug'
+      preLoaderRoute: typeof NovelaSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/oferta/$slug': {
+      id: '/oferta/$slug'
+      path: '/oferta/$slug'
+      fullPath: '/oferta/$slug'
+      preLoaderRoute: typeof OfertaSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/catalogo/': {
+      id: '/admin/catalogo/'
+      path: '/catalogo'
+      fullPath: '/admin/catalogo/'
+      preLoaderRoute: typeof AdminCatalogoIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/catalogo/$slug': {
+      id: '/admin/catalogo/$slug'
+      path: '/catalogo/$slug'
+      fullPath: '/admin/catalogo/$slug'
+      preLoaderRoute: typeof AdminCatalogoSlugRouteImport
+      parentRoute: typeof AdminRoute
+    }
   }
 }
 
+interface AdminRouteChildren {
+  AdminBannersRoute: typeof AdminBannersRoute
+  AdminClientesRoute: typeof AdminClientesRoute
+  AdminConfiguracoesRoute: typeof AdminConfiguracoesRoute
+  AdminOfertasRoute: typeof AdminOfertasRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+  AdminCatalogoSlugRoute: typeof AdminCatalogoSlugRoute
+  AdminCatalogoIndexRoute: typeof AdminCatalogoIndexRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminBannersRoute: AdminBannersRoute,
+  AdminClientesRoute: AdminClientesRoute,
+  AdminConfiguracoesRoute: AdminConfiguracoesRoute,
+  AdminOfertasRoute: AdminOfertasRoute,
+  AdminIndexRoute: AdminIndexRoute,
+  AdminCatalogoSlugRoute: AdminCatalogoSlugRoute,
+  AdminCatalogoIndexRoute: AdminCatalogoIndexRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRouteWithChildren,
+  CadastroRoute: CadastroRoute,
+  EntrarRoute: EntrarRoute,
+  ExplorarRoute: ExplorarRoute,
+  FavoritosRoute: FavoritosRoute,
+  HistoricoRoute: HistoricoRoute,
+  MinhasNovelasRoute: MinhasNovelasRoute,
+  PerfilRoute: PerfilRoute,
+  RecuperarSenhaRoute: RecuperarSenhaRoute,
+  AssistirSlugRoute: AssistirSlugRoute,
+  CheckoutSlugRoute: CheckoutSlugRoute,
+  NovelaSlugRoute: NovelaSlugRoute,
+  OfertaSlugRoute: OfertaSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
